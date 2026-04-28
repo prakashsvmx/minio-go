@@ -64,6 +64,7 @@ type AdvancedPutOptions struct {
 	ReplicationStatus        ReplicationStatus
 	SourceMTime              time.Time
 	ReplicationRequest       bool
+	SourceReplicationARN     string
 	RetentionTimestamp       time.Time
 	TaggingTimestamp         time.Time
 	LegalholdTimestamp       time.Time
@@ -216,6 +217,9 @@ func (opts PutObjectOptions) Header() (header http.Header) {
 	}
 	if opts.Internal.ReplicationRequest {
 		header.Set(minIOBucketReplicationRequest, "true")
+	}
+	if opts.Internal.SourceReplicationARN != "" {
+		header.Set(minIOBucketReplicationARN, opts.Internal.SourceReplicationARN)
 	}
 	if opts.Internal.ReplicationValidityCheck {
 		header.Set(minIOBucketReplicationCheck, "true")

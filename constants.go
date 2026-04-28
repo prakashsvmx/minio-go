@@ -119,6 +119,7 @@ const (
 	minIOBucketReplicationProxyRequest = "X-Minio-Source-Proxy-Request"
 	minIOBucketReplicationRequest      = "X-Minio-Source-Replication-Request"
 	minIOBucketReplicationCheck        = "X-Minio-Source-Replication-Check"
+	minIOBucketReplicationARN          = "X-Minio-Source-Replication-Arn"
 
 	// Header indicates last tag update time on source
 	minIOBucketReplicationTaggingTimestamp = "X-Minio-Source-Replication-Tagging-Timestamp"
